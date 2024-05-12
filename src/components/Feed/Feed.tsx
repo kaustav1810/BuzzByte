@@ -11,13 +11,16 @@ import {db} from '../../firebaseConfig'
 export default function Feed() {
 
   const [posts,setPosts] = useState([]);
+  
+  const postsCollection = collection(db,'Posts');
 
   const getPostsFromDB = async() => {
-    const postsCollection = collection(db,'Posts');
-
+    
     const postsSnapshot = await getDocs(postsCollection);
 
-    let postsList:any = postsSnapshot.docs.map(doc => doc.data());
+    let postsList:any = postsSnapshot.docs.map(doc => {
+      return {...doc.data(),postId:doc.id}
+    });
 
     console.log(postsList)
 
@@ -26,7 +29,7 @@ export default function Feed() {
 
   useEffect(()=>{
     getPostsFromDB()
-  },[posts])
+  },[])
   
 
   // const postInfo = {
@@ -47,8 +50,8 @@ export default function Feed() {
   // }
   return (
     <div className='feed'>
-        <Tweetbox/>
-        {posts.map(postItem => <Post postInfo={postItem}/> )}
+        <Tweetbox getPostsFromDB={getPostsFromDB}/>
+        {posts.map(postItem => <Post key={postItem.postId} postInfo={postItem}/> )}
     </div>
   )
 }

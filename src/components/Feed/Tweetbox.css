@@ -44,6 +44,9 @@
     min-width: 5rem;
 }
 
+.tweetBox .postBtn:hover{
+    cursor: pointer;
+}
 
 .tweetBox .postBtn:disabled{
     background-color: #acd4ff;
