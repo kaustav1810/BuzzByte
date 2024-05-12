@@ -3,24 +3,25 @@ import './Post.css'
 import { Avatar } from '@mui/material'
 import { BookmarkBorderOutlined, ChatBubbleOutline, Circle, FavoriteBorderOutlined, MoreHoriz, PollOutlined, PublishOutlined, RepeatOnOutlined, RepeatOutlined, Verified } from '@mui/icons-material'
 
-function Post() {
+function Post({postInfo}:any) {
+
+ let {postAnalytics,postAuthorInfo,timeStamp,postContent} = postInfo;
+
   return (
     <div className='post'>
         <div>
             <div>
-                <Avatar src="/images/profile_picture_latest.jpg"/>
+                <Avatar src={postAuthorInfo.profileImg}/>
             </div>
             <div className='post_header'>
                 <div>
-                    <span>Kaustav banerjee</span>
-                    <Verified/>
-                    <span>@Kaustav1810</span>
-                    <Circle fontSize='small'/>
-                    <span>15h</span>
+                    <span>{postAuthorInfo.accountName}</span>
+                    {postAuthorInfo.isVerified && <Verified className='verifiedBadge'/>}
+                    <span>{postAuthorInfo.userName}</span>
+                    <Circle fontSize='small' className='separator'/>
+                    <span>{timeStamp}</span>
                 </div>
-                <div className='post_content'>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit voluptatibus eum quo quos nulla totam odio architecto? Voluptas eum, expedita sunt, quaerat ad delectus, vel recusandae ipsam asperiores iusto quae.
-                </div>
+                <div className='post_content'>{postContent}</div>
                 
             </div>
             <div>
@@ -30,15 +31,15 @@ function Post() {
         <div className='post_options'>
             <div>
                 <ChatBubbleOutline className='post_options_icons'/>
-                <span>19</span>
+                <span>{postAnalytics.commentsCount}</span>
             </div>
             <div>
                 <RepeatOutlined className='post_options_icons'/>
-                <span>2</span>
+                <span>{postAnalytics.shareCount}</span>
             </div>
             <div>
                 <FavoriteBorderOutlined className='post_options_icons'/>
-                <span>5.3k</span>
+                <span>{postAnalytics.likesCount}</span>
             </div>
                 <PollOutlined className='post_options_icons'/>
             <div>
