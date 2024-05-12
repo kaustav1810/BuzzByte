@@ -1,0 +1,21 @@
+.sidebar-options{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: min-content;
+}
+
+.sidebar-options:hover{
+    background-color: #e6eaec;
+    border-radius: 30px;
+}
+
+.sidebar-options > span{
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+.sidebar-icons{
+    padding: 1rem;
+    font-size: 2rem;
+}

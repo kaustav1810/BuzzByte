@@ -1,0 +1,71 @@
+.sidebar{
+    flex: 0.3;
+    /* padding: 1rem; */
+    height: 100%;
+    width: 100%;
+    overflow-y: hidden;
+    border: 1px solid red;
+
+
+}
+
+.sidebar .twitter_icon{
+    font-size: 2.5rem;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.sidebar .twitter_icon:hover{
+    background-color: #e6eaec;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.sidebar .postBtn{
+    background-color: #3798ff;
+    border-radius: 40px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    padding: 12px;
+    color: white;
+    text-transform: inherit;
+    margin-top: 0.5rem;
+    max-width: 15rem;
+}
+
+.sidebar .sidebar-profile{
+    width: 300px;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    padding: 1rem;
+}
+
+.sidebar .sidebar-profile:hover{
+    background-color: #e6eaec;
+    border-radius: 3rem;
+    cursor: pointer;
+}
+
+
+.sidebar .sidebar-profile .profile-pic{
+    /* border-radius: 50%; */
+
+    margin-right: 0.8rem;
+    object-fit: cover;
+}
+
+.sidebar .sidebar-profile .profile-handle{
+    display: flex;
+    flex-direction: column;
+    margin-right: 2rem;
+}
+
+.sidebar .sidebar-profile .profile-handle > div:nth-child(1){
+    font-weight: 800;
+}
+
+.sidebar .sidebar-profile .more-icon{
+    display: flex;
+    align-items: center;
+}

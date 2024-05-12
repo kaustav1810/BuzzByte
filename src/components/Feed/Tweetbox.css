@@ -1,0 +1,92 @@
+.tweetBox{
+    display: flex;
+    flex-direction: row;
+    padding: 0.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);;
+
+    /* border: 1px solid red; */
+}
+
+.tweetBox input{
+    outline: none;
+    border: none;
+    /* border: 2px solid green; */
+
+    padding: auto;
+    height: 100%;
+    width: 100%;
+    font-size: 1.5rem;
+    margin-left: 1rem;
+}
+
+.tweetBox .tweetBox_avatar{
+    display: flex;
+}
+
+.tweetBox .tweetBox_avatar .avatar{
+    object-fit: cover;
+}
+
+.tweetBox .tweetBox_avatar input::placeholder{
+    font-size: 1.3rem;
+    overflow: visible;
+}
+
+.tweetBox .postBtn{
+    background-color: #3798ff;
+    border-radius: 40px;
+    font-size: 1rem;
+    font-weight: 800;
+    padding: 0.5rem;
+    color: white;
+    text-transform: inherit;
+    margin-top: 0.5rem;
+    min-width: 5rem;
+}
+
+
+.tweetBox .postBtn:disabled{
+    background-color: #acd4ff;
+}
+
+.tweetBox .tweetBox_options > div:nth-of-type(1){
+    display: flex;
+    align-items: center;
+    color:var(--twitter-color);
+    /* border: 2px solid crimson; */
+
+}
+
+.tweetBox .tweetBox_options{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.tweetBox .tweetBox_options .tweetBox_options_icons:hover{
+    background-color: #e5f5ff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.tweetBox .tweetBox_options > div:nth-of-type(1) > :last-child{
+    color: #acd4ff;
+    cursor: default;
+    margin-left: 8rem;
+}
+
+.tweetBox .tweetBox_options > div:nth-of-type(1) > :last-child:hover{
+    background-color: none !important;
+    cursor: default !important;
+}
+
+.tweetBox .tweetBox_options > div:nth-of-type(1) *{
+    padding: 0.4rem;
+}
+
+.tweetBox .tweetBox_options{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 2px solid purple; */
+
+}
