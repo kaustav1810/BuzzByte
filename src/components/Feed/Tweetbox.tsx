@@ -7,11 +7,11 @@ import { getDatabase, ref, set } from 'firebase/database'
 
 import './Tweetbox.css'
 import { addDoc, collection, doc, setDoc } from 'firebase/firestore'
-import { db } from '@/firebaseConfig'
+import { db } from '../../firebaseConfig'
 
 function Tweetbox({getPostsFromDB}) {
 
-    const [userInput,setuserInput] = useState('');
+    const [userInput,setuserInput] = useState<any>('');
 
 
 
@@ -29,7 +29,7 @@ function Tweetbox({getPostsFromDB}) {
               userName:'@efwuef87987f',
               isVerified:false,
             },
-            timeStamp:'152332h',
+            timeStamp:new Date().toString(),
             postContent: userInput,
             postAnalytics:{
               likesCount:-5,

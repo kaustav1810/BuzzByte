@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Sidebar from "@/components/Sidebar/Sidebar";
 import './App.css'
-import Feed from "@/components/Feed/Feed";
 import Widgets from "@/components/Widgets/Widgets";
+import {Feed} from '../components/Feed/Feed';
 
 export default function Home() {
   return (

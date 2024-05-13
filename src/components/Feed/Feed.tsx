@@ -1,16 +1,17 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React, { forwardRef, useEffect, useState } from 'react'
 import './Feed.css'
 import Tweetbox from './Tweetbox'
 import Post from './Post'
-import { collection, getDocs } from 'firebase/firestore'
+import { collection, getDocs, orderBy, query } from 'firebase/firestore'
 import {db} from '../../firebaseConfig'
+import FlipMove from 'react-flip-move'
 
 
-export default function Feed() {
+export const Feed = () =>{
 
-  const [posts,setPosts] = useState([]);
+  const [posts,setPosts] = useState<any>([]);
   
   const postsCollection = collection(db,'Posts');
 
@@ -22,6 +23,10 @@ export default function Feed() {
       return {...doc.data(),postId:doc.id}
     });
 
+    postsList = postsList.sort((a,b)=>{
+      return new Date(b.timeStamp).getTime() - new Date(a.timeStamp).getTime();
+    })
+    
     console.log(postsList)
 
     setPosts(postsList);
@@ -51,7 +56,9 @@ export default function Feed() {
   return (
     <div className='feed'>
         <Tweetbox getPostsFromDB={getPostsFromDB}/>
-        {posts.map(postItem => <Post key={postItem.postId} postInfo={postItem}/> )}
+        <FlipMove>
+          {posts.map(postItem => <Post key={postItem.postId} postInfo={postItem}/> )}
+        </FlipMove>
     </div>
   )
 }
