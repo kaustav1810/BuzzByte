@@ -1,6 +1,55 @@
 .widgets{
     flex: 0.3;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
     border: 1px solid red;
+    padding: 2rem;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+}
 
+
+.widgets .searchIcon{
+    position: relative;
+    top: 2.5rem;
+    padding-right: 4rem;
+    z-index: 999;
+}
+
+.widgets .search-widgets{
+    border-radius: 2rem;
+    background-color: var(--twitter-background);
+    outline: none !important;
+    border: none !important;
+    position: sticky;
+}
+
+.widgets .search-widgets:focus{
+    outline: none !important;
+    border: none !important;
+}
+
+.widgets .widgets-card{
+    margin: 1rem 0;
+    border-radius: 1rem;
+    border: 0.1rem solid var(--twitter-background);
+}
+
+.widgets .widgets-card h2{
+    margin-left: 1rem;
+}
+
+.widgets .widgets-card .show-more-link{
+    padding: 1rem;
+}
+
+.widgets .widgets-card .show-more-link > a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: var(--twitter-color) !important;
+}
+
+.widgets .widgets-card .show-more-link:hover{
+    background-color: #efefef;
+    cursor: pointer;
 }

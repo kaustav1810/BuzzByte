@@ -1,0 +1,26 @@
+.followerCard:hover{
+    cursor: pointer;
+    background-color: #efefef;
+    transition: background-color 0.2s ease;
+}
+
+.followerCard .avatar{
+    width: 3.2rem;
+    height: 3.2rem;
+}
+
+.followerCard .verifiedIcon{
+    font-size: 1.5rem;
+    margin-left: 0.2rem;
+    color: var(--twitter-color);
+}
+
+.followerCard .followBtn{
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    text-transform: inherit;
+    border-radius: 2rem;
+    font-size: 1rem;
+    color: white;
+    background-color: rgb(10, 16, 46);
+}

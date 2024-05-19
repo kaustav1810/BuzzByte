@@ -1,0 +1,41 @@
+.liveTweet{
+    cursor: pointer;
+    /* margin-top: 1.5rem; */
+    padding: 1rem;
+}
+
+.liveTweet:hover{
+    background-color: #efefef;
+    transition: background-color 0.2s ease;
+}
+
+.liveTweet-avatar{
+    width: 1.3rem;
+    height: 1.3rem;
+}
+
+.liveTweet-avatar-2{
+    width: 2rem;
+    height: 2rem;
+}
+
+.liveTweet-accountInfo *{
+    margin-right: 0.2rem;
+}
+
+.liveTweet-accountInfo .verifiedIcon{
+    font-size: 1rem;
+    color: var(--twitter-color);
+}
+
+.liveTweetHeader{
+    font-size: 1.1rem;
+}
+
+.liveWatchCount{
+    padding: 0.2rem;
+    font-weight: 600;
+    padding-right: 0.8rem;
+    border-radius: 1.8rem;
+    border: 0.2rem solid rgb(75, 234, 1);
+}
