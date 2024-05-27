@@ -1,0 +1,11 @@
+.navbar{
+    width: 100%;
+    z-index: 999999999;
+    margin: 0 0 1rem 0;
+    position: sticky;
+    padding: 1rem;
+    top:0;
+    border-bottom: 1px solid #e6ecf0;
+    box-shadow: '0 42px 12px -12px red';
+    height: min-content;
+}
