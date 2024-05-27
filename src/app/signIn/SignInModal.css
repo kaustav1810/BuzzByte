@@ -1,0 +1,42 @@
+.modalContent *{
+    margin-bottom: 1rem;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* width: min-content; */
+    background-color: #000;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.5);
+    padding: 32px; /* Equivalent to 4 in MUI's spacing */
+    display: flex;
+    flex-direction: column;
+    z-index: 9999;
+    /* align-items: center; */
+  }
+
+  .DOBSelector{
+    color: #bdbdbd !important;
+    border: 1px solid #555;
+  }
+
+  .MuiSelect-nativeInput{
+    border: 1px solid red;
+  }
+
+  .DOBSelector fieldset{
+    color: white !important;
+  }
+  
+  #outlined-basic{
+    border: 1px solid white;
+  }
+
+  #outlined-basic::placeholder{
+    color: white;
+    opacity:1
+  }

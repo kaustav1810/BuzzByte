@@ -3,11 +3,13 @@
 @tailwind utilities; */
 
 body{
+    --twitter-color: #2b94fd;
     --twitter-color: #50b7f5;
     --twitter-background: #e6ecf0;
     margin: 0;
     /* width: 100%; */
     display: flex;
+    flex-direction: column;
     /* overflow-y: hidden; */
 }
 
