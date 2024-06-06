@@ -12,14 +12,31 @@ const years = Array.from({ length: 100 }, (_, i) => new Date().getFullYear() - i
 const StyledDatePicker:any = styled(Select)(()=>({
     '.MuiSelect-select':{
         color: 'white !important',
-        border: '1px solid white'
+        border: '1px solid white',
       },
       
     '.MuiSelect-icon':{
         marginBottom:'0 !important',
         color: 'white !important',
-    }
+    },
+    
 }))
+
+const StyledFormControl = styled(FormControl)(() => ({
+  '&.MuiFormControl-root': {
+    margin: '0 !important',
+    marginRight: '2rem !important',
+    minWidth: 120,
+  },
+  '& .MuiInputBase-root':{
+    
+    margin: '0 !important',
+  },
+  ' & .MuiInputBase-input':{
+    // margin: '0 !important',
+  }
+
+}));
 
 const DobSelector = ({formData, updateDob}) => {
   const [errors, setErrors] = useState({ month: '', day: '', year: '' });
@@ -40,8 +57,8 @@ const DobSelector = ({formData, updateDob}) => {
   };
 
   return (
-    <Box display="flex" justifyContent="space-between" width="100%">
-      <FormControl variant="outlined" sx={{ minWidth: 120, mr: 2 }} error={!!errors.month}>
+    <Box display="flex" justifyContent="center" width="100%">
+      <StyledFormControl variant="outlined" sx={{ minWidth: 120, mr: 2,mb:0,justifyContent:"center" }} error={!!errors.month}>
         <StyledDatePicker
           value={months[formData?.dob?.month-1] || ''}
           placeholder="Month"
@@ -60,8 +77,8 @@ const DobSelector = ({formData, updateDob}) => {
           ))}
         </StyledDatePicker>
         {errors.month && <FormHelperText>{errors.month}</FormHelperText>}
-      </FormControl>
-      <FormControl variant="outlined" sx={{ minWidth: 120, mr: 2 }} error={!!errors.day}>
+      </StyledFormControl>
+      <StyledFormControl variant="outlined" sx={{ minWidth: 120, mr: 2 }} error={!!errors.day}>
         <StyledDatePicker
           value={formData?.dob?.day || ''}
           placeholder="Day"
@@ -80,8 +97,8 @@ const DobSelector = ({formData, updateDob}) => {
           ))}
         </StyledDatePicker>
         {errors.day && <FormHelperText>{errors.day}</FormHelperText>}
-      </FormControl>
-      <FormControl variant="outlined" sx={{ minWidth: 120 }} error={!!errors.year}>
+      </StyledFormControl>
+      <StyledFormControl variant="outlined" sx={{ minWidth: 120 }} error={!!errors.year}>
         <StyledDatePicker
           value={formData?.dob?.year || ''}
           placeholder="Year"
@@ -100,7 +117,7 @@ const DobSelector = ({formData, updateDob}) => {
           ))}
         </StyledDatePicker>
         {errors.year && <FormHelperText>{errors.year}</FormHelperText>}
-      </FormControl>
+      </StyledFormControl>
     </Box>
   );
 };

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { AppBar, Toolbar, Typography, Button, styled, Link } from '@mui/material';
 import './NavBar.css';
 import { X } from '@mui/icons-material';
-import { useAuth } from '@/app/contexts/AuthContext';
+import { useAuth } from '../../app/contexts/AuthContext';
 
 const Navbar = () => {
   const { currentUser } = useAuth();
